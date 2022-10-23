@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
+
+* {
+
+	box-sizing: border-box;
+	font-family: 'Montserrat', sans-serif;
+}
+
+body{
+	width: 100%;
+	height: 100%;
+	box-sizing: border-box;
+}
+
+#header{
+	width: 100%;
+	display: flex;
+	font-weight: bold;
+	padding: 12px 45px 12px 45px;
+	justify-content:space-between;
+}
+
+.buttonLogOff{
+	margin: 20px;
+	border-radius: 20px;
+	border: 1px solid #FF4B2B;
+	background-color: #FF4B2B;
+	color: #FFFFFF;
+	font-size: 10px;
+	font-weight: bold;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	transition: transform 80ms ease-in;
+	padding: 12px 45px;
+}
+
+button:active {
+	transform: scale(0.95);
+}
+
+.inputs{
+	width: 100%;
+	display: flex;
+	font-weight: bold;
+	padding: 12px 45px 12px 45px;
+	justify-content:space-between;
+	
+}
+
+#Descricao{
+	size: 200px;
+}
+
+button {
+	border-radius: 20px;
+	border: 1px solid #FF4B2B;
+	background-color: #FF4B2B;
+	color: #FFFFFF;
+	font-size: 10px;
+	font-weight: bold;
+	padding: 12px 45px;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	transition: transform 80ms ease-in;
+	margin-left: 10px;
+}
+
+#ordenar{
+	padding: 12px 80px 40px 45px;   
+	float: left;    
+	width: 100%;
+	border-bottom: 50px;
+	display: flex;
+}
+
+#tabela{
+	padding: 12px 45px 12px 45px;   
+	text-align: center;     
+	width: 100%;
+	border-bottom: 50px;
+} 
+
+tr{
+	height: 50px;
+}
+
+tr:hover td {background:#CCC;}
+
+
+
+

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INDEX - SISTEMA DE RECADOS</title>
+    <link rel="stylesheet" href="styleMain.css">
+   
+</head>
+<body>
+    <header>
+        <div id="header">
+         <h1 id="h1"></h1>
+         <button type="button" class="buttonLogOff" onclick="logoff()">Sair</button>
+        </div>    
+    </header>
+    <div>
+        <form action="#" id="inputspadrao">
+            <div class="inputs">
+            <input type="text" class="textoinput" id="Descricao" size="25" maxlength="20"  placeholder="Descriçao" required/>
+            <input type="text" class="textoinput" id="Message" size="100" maxlength="90" placeholder="Informe um novo recado" required/>
+            <button type="button" id="sendMessage" onclick="newMessage();">Cadastrar</button>
+            </div>    
+        </form>
+    </div>   
+    <div id="ordenar">
+        <button type="button" onclick="montarRecados()">Mais Novos</button>
+        <button type="button" onclick="maisVelho()">Mais Antigos</button>
+    </div>    
+    <div id="tabela">
+        <table width="100%">
+            <thead>
+                    <th width="10%">ID</th>
+                    <th width="15%">DESCRIÇÃO</th>
+                    <th width="45%">RECADO</th>
+                    <th width="15%">AÇÃO</th>
+            </thead>
+            <tbody id="tabelaRecados">
+
+            </tbody>
+        </table>
+    </div>     
+    
+</body>
+<script src="./main.js"></script>
+
+</html>
