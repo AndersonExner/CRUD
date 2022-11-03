@@ -144,6 +144,7 @@ function montarRecados(){
 		})
 
 		tabelaRecados.appendChild(trRecado);
+		resetaCampos();
 	});
 
 	//FUNCAO PARA APAGAR RECADOS
@@ -209,8 +210,8 @@ function montarRecados(){
 }
 //LIMPAR INPUTS
 const resetaCampos = () => {
-    const fields = document.querySelectorAll('.textoinput')
-    fields.forEach(field => field.value = "")
+    const form = document.getElementById("inputspadrao");
+	form.reset();
 }
 
 //FUNCAO ORDENAR POR RECADOS MAIS ANTIGOS
