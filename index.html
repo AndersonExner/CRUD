@@ -6,35 +6,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>INDEX - SISTEMA DE RECADOS</title>
     <link rel="stylesheet" href="styleMain.css">
+    <!-- CSS only -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" 
+	rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" 
+	crossorigin="anonymous"
+	>
+	
    
 </head>
 <body>
-    <header>
-        <div id="header">
-         <h1 id="h1"></h1>
-         <button type="button" class="buttonLogOff" onclick="logoff()">Sair</button>
+    <header class="container-fluid mt-3 mb-3">
+        <div class="row justify-content-around">
+         <h1 class="col-6 m-3" id="h1"></h1>
+         <button type="button" class="col-2 m-3 button" onclick="logoff()">Sair</button>
         </div>    
     </header>
-    <div>
-        <form action="#" id="inputspadrao">
-            <div class="inputs">
-            <input type="text" class="textoinput" id="Descricao" size="25" maxlength="20"  placeholder="Descriçao" required/>
-            <input type="text" class="textoinput" id="Message" size="100" maxlength="90" placeholder="Informe um novo recado" required/>
-            <button type="button" id="sendMessage" onclick="newMessage();">Cadastrar</button>
+    <container class="container-fluid">
+        <form class="row mt-3 justify-content-around" action="#" id="inputspadrao">
+            <div class="col-3">
+                <input type="text" class="form-control shadow p-2 mb-2 bg-body rounded" id="Descricao" maxlength="20"  placeholder="Descriçao" required/>
+            </div>
+            <div class="col-6">
+                <input type="text" class="form-control shadow p-2 mb-2 bg-body rounded" id="Message" maxlength="90" placeholder="Informe um novo recado" required/>
+            </div>
+            <div class="col-2">
+                <input type="submit" class="button " value="Cadastrar" id="sendMessage" onclick="newMessage();"></input>      
             </div>    
         </form>
-    </div>   
-    <div id="ordenar">
-        <button type="button" onclick="montarRecados()">Mais Novos</button>
-        <button type="button" onclick="maisVelho()">Mais Antigos</button>
-    </div>    
+        <div class="row justify-content-center mt-3 mb-3">
+            <button type="button" class="col-2 m-3 p-2 button" onclick="montarRecados()">Mais Novos</button>
+            <button type="button" class="col-2 m-3 p-2 button" onclick="maisVelho()">Mais Antigos</button>
+        </div>  
+        <hr>  
+    </container>    
     <div id="tabela">
-        <table width="100%">
+        <table class="table-light justify-content-center text-center tabela">
             <thead>
-                    <th width="10%">ID</th>
-                    <th width="15%">DESCRIÇÃO</th>
-                    <th width="45%">RECADO</th>
-                    <th width="15%">AÇÃO</th>
+                    <th scope="col" class="col-1">ID</th>
+                    <th scope="col" class="col-3">DESCRIÇÃO</th>
+                    <th scope="col" class="col-6" >RECADO</th>
+                    <th scope="col" class="col-2">AÇÃO</th>
             </thead>
             <tbody id="tabelaRecados">
 

@@ -113,6 +113,7 @@ function montarRecados(){
 	Recados.forEach((item, index) => {
 				
 		const trRecado = document.createElement('tr');
+		trRecado.setAttribute("class","bounce-in-bottom")
 		const tdId = document.createElement('td');
 		tdId.setAttribute('id', index);
 		tdId.innerText = index + 1;
@@ -124,8 +125,10 @@ function montarRecados(){
 		tdMensagem.innerText = item.mensagem; 
 		trRecado.appendChild(tdMensagem);
 
-		const botaoEditar = document.createElement('button');
-		botaoEditar.innerText = 'Editar';
+		const botaoEditar = document.createElement('input');
+		botaoEditar.setAttribute("type","button")
+		botaoEditar.setAttribute("Value","Editar")
+		botaoEditar.setAttribute("class","p-2 me-2 button");
 		trRecado.appendChild(botaoEditar);
 		botaoEditar.addEventListener('click', () => {
 			editarRecado(item);
@@ -133,6 +136,7 @@ function montarRecados(){
 		
 
 		const botaoApagar = document.createElement('button');
+		botaoApagar.setAttribute("class","p-2 button");
 		botaoApagar.innerText = 'Apagar';
 		trRecado.appendChild(botaoApagar);
 		botaoApagar.addEventListener('click', () => {
