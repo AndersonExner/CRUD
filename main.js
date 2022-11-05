@@ -125,10 +125,10 @@ function montarRecados(){
 		tdMensagem.innerText = item.mensagem; 
 		trRecado.appendChild(tdMensagem);
 
-		const botaoEditar = document.createElement('input');
-		botaoEditar.setAttribute("type","button")
-		botaoEditar.setAttribute("Value","Editar")
-		botaoEditar.setAttribute("class","p-2 me-2 button");
+		const botaoEditar = document.createElement('button');
+		//botaoEditar.setAttribute("type","button")
+		//botaoEditar.setAttribute("Value","Editar")
+		botaoEditar.setAttribute("class","bi bi-pencil m-2");
 		trRecado.appendChild(botaoEditar);
 		botaoEditar.addEventListener('click', () => {
 			editarRecado(item);
@@ -136,8 +136,8 @@ function montarRecados(){
 		
 
 		const botaoApagar = document.createElement('button');
-		botaoApagar.setAttribute("class","p-2 button");
-		botaoApagar.innerText = 'Apagar';
+		botaoApagar.setAttribute("class","bi bi-trash");
+		//botaoApagar.innerText = 'Apagar';
 		trRecado.appendChild(botaoApagar);
 		botaoApagar.addEventListener('click', () => {
 			apagarDado(index);
