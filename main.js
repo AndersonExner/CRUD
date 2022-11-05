@@ -126,22 +126,20 @@ function montarRecados(){
 		trRecado.appendChild(tdMensagem);
 
 		const botaoEditar = document.createElement('button');
-		//botaoEditar.setAttribute("type","button")
-		//botaoEditar.setAttribute("Value","Editar")
 		botaoEditar.setAttribute("class","bi bi-pencil m-2");
+		botaoEditar.setAttribute("data-bs-toggle","modal");
+		botaoEditar.setAttribute("data-bs-target","#staticBackdrop");
 		trRecado.appendChild(botaoEditar);
 		botaoEditar.addEventListener('click', () => {
 			editarRecado(item);
-		})
+		});
 		
-
 		const botaoApagar = document.createElement('button');
 		botaoApagar.setAttribute("class","bi bi-trash");
-		//botaoApagar.innerText = 'Apagar';
 		trRecado.appendChild(botaoApagar);
 		botaoApagar.addEventListener('click', () => {
 			apagarDado(index);
-		})
+		});
 
 		tabelaRecados.appendChild(trRecado);
 		resetaCampos();
@@ -165,46 +163,35 @@ function montarRecados(){
 	//FUNCAO PARA EDITAR RECADOS
 
 	function editarRecado(item){
+	
 			
-		const dialog = document.createElement('dialog');
-		const novaDesc = document.createElement('input');
-		novaDesc.setAttribute('type','text');
-		novaDesc.setAttribute('size','25');
-		novaDesc.setAttribute('maxlength','20');
+		const novaDesc = document.getElementById('modal_desc');
 		novaDesc.setAttribute('value', `${item.desc}`);
-		novaDesc.setAttribute('id','novadescricao')
-		dialog.appendChild(novaDesc);
-		const novotexto = document.createElement('input');
-		novotexto.setAttribute('type','text');
-		novotexto.setAttribute('size','100');
-		novotexto.setAttribute('maxlength','90');
+		const novotexto = document.getElementById('modal_msg');
 		novotexto.setAttribute('value', `${item.mensagem}`);
-		novotexto.setAttribute('id','novorecado')
-		dialog.appendChild(novotexto);
-		const cancelar = document.createElement('button');
-		cancelar.innerText = 'cancelar';
-		dialog.appendChild(cancelar);
-		const salvar = document.createElement('button');
-		salvar.innerText = 'Salvar';
-		dialog.appendChild(salvar);
-		
-		tabelaRecados.appendChild(dialog);
-
-		const modal = document.querySelector('dialog');
-		modal.showModal();
+		const salvar = document.getElementById('salvar');
+		const sair = document.getElementById("sair");	
+		const modalform = document.getElementById('modal_form');
 
 		salvar.addEventListener('click', () => {
-			let descricaoeditado = document.getElementById('novadescricao').value
-			let recadoeditado = document.getElementById('novorecado').value
+			let descricaoeditado = document.getElementById('modal_desc').value
+			let recadoeditado = document.getElementById('modal_msg').value
+			if(!descricaoeditado || !recadoeditado){
+				alert("Não são permitidos campos vazios");
+				modalform.reset();
+				montarRecados();
+			}else{
 			item.desc = descricaoeditado;
 			item.mensagem = recadoeditado;
 			setUserLog(userLogado);
 			montarRecados();
+			modalform.reset();
+			}
 		})
 
-		cancelar.addEventListener('click', () => {
-			modal.close();
+		sair.addEventListener('click', () => {
 			montarRecados();
+			modalform.reset();
 		})
 	}
 }
