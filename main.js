@@ -128,7 +128,7 @@ function montarRecados(){
 		const botaoEditar = document.createElement('button');
 		botaoEditar.setAttribute("class","bi bi-pencil m-2");
 		botaoEditar.setAttribute("data-bs-toggle","modal");
-		botaoEditar.setAttribute("data-bs-target","#staticBackdrop");
+		botaoEditar.setAttribute("data-bs-target","#modaleditar");
 		trRecado.appendChild(botaoEditar);
 		botaoEditar.addEventListener('click', () => {
 			editarRecado(item);
@@ -148,8 +148,8 @@ function montarRecados(){
 	//FUNCAO PARA APAGAR RECADOS
 
 	function apagarDado(index){
-
-    	document.getElementById(`${index}`).remove()
+		
+		document.getElementById(`${index}`).remove()
 		Recados.splice(index,1);
 		for (const i of userLogado) {
 			i.ListaRecados = Recados
@@ -157,8 +157,9 @@ function montarRecados(){
 		setUserLog(userLogado);
 		salvar();
 		montarRecados();
-    
+		
 	}
+		
 
 	//FUNCAO PARA EDITAR RECADOS
 
