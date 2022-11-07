@@ -63,7 +63,6 @@ const loginUser = () => {
     });
 	
 	if(login){
-		alert(`Bem vindo ${userName}`);
 		userLog(userName)
 		location.href = 'index.html';
 	}else{
