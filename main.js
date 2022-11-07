@@ -206,8 +206,6 @@ const resetaCampos = () => {
 function maisVelho() {
 	const linhasNode = document.querySelectorAll('tr');
 	
-	console.log(linhasNode);
-	
 	const tabelaRecados = document.getElementById('tabelaRecados');	
 	tabelaRecados.innerHTML = '';
 
